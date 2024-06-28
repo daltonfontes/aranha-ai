@@ -1,6 +1,6 @@
 @aranha_HostAddress = http://localhost:5073
 
-GET {{aranha_HostAddress}}/weatherforecast/
+GET {{aranha_HostAddress}}/
 Accept: application/json
 
 ###
