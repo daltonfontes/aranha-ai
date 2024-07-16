@@ -11,7 +11,7 @@ namespace aranha.Controllers
     [Route("[controller]")]
     public class CrawlerController : ControllerBase
     {
-       private readonly ICrawlerService _crawlerService;
+       private ICrawlerService _crawlerService;
 
         public CrawlerController(ICrawlerService crawlerService)
         {
@@ -21,7 +21,7 @@ namespace aranha.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Crawler crawler)
         {
-            var content = await _crawlerService.NavigateToUrlAsync(crawler.Url);
+            string content = await _crawlerService.NavigateToUrlAsync(crawler.Url);
             return Ok(new { Content = content });
         }
     }

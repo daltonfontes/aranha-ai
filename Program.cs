@@ -10,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICrawlerService, CrawlerService>();
+builder.Services.AddScoped<ILauncherPlaywrightService, LauncherPlaywrightService>();
 
 var app = builder.Build();
 
